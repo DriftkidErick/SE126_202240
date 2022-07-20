@@ -1,5 +1,12 @@
 #Week 1 Day 2 -se116 Review Demo
 
+#functions ---------------------------------------------------------------------------------------------
+def capacity():
+    cap = int(input("\tEnter the room's Max Capacity "))
+
+    return cap #Replaces the function call line!
+
+#Main Code ---------------------------------------------------------------------------------------------
 print("\n\n\tWelcome to the Room Safety Manager!\n\n")
 
 answer = input("\tWould you like to check some rooms? [y/n]: ").lower()
@@ -12,7 +19,7 @@ while answer != "y" and answer != "n":
 
 while answer == "y":
 
-    roomCapacity = int(input("\tEnter the room's Max Capacity "))
+    roomCapacity = capacity()
 
     peopleAttending = int(input("\tEntert the number of meeting attendees for the room: "))
 
