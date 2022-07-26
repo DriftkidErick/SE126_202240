@@ -24,4 +24,7 @@ with open("w2_Lab\lab2a.csv") as csvfile:
     min = 0
     over = 0
 
+    if over > min:
+        print()
+
     total_rooms += over
