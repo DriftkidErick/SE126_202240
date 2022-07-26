@@ -8,7 +8,7 @@ total_records = 0 # counts total records
 
 total_rooms = 0 # total rooms
 
-print("{0}\t{1}\t{2}\t{3}".format("Room", "Max", "Min", "Over"))
+print("{0:10}\t{1:4}\t{2:4}\t{3:4}".format("Room", "Max", "Min", "Over"))
 
 with open("w2_Lab\lab2a.csv") as csvfile:
 
@@ -18,13 +18,17 @@ with open("w2_Lab\lab2a.csv") as csvfile:
 
         total_records += 1
 
-    print(rec)
+    #print(rec)
 
-    max = 0
-    min = 0
-    over = 0
+    room = rec[0]
+    max = int(rec[1])
+    min = int(rec[2])
+    over = min - max
 
-    if over > min:
-        print()
+    
 
-    total_rooms += over
+    #total_rooms += over
+
+    print("{0:10}\t{1:4}\t{2:4}\t{3:4}".format(room, max, min, over))
+print(total_records)
+print(total_rooms)
