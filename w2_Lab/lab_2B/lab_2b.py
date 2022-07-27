@@ -9,7 +9,7 @@ import csv
 record = 0
 print("\nDATA FROM FILE------------------------")
 
-print("{0:8} {1:8} {2:4} {3}  {4}  {5}  {6}  {7}  {8}".format("Type", "BRAND", "CPU", "RAM", "DISC 1", "NUM DISCS", "DISC 2", "OS", "YEAR"))
+print("{0:8} {1:8} {2}   {3:3}  {4:6}     {5:9} {6:6} {7:2} {8:4}".format("Type", "BRAND", "CPU", "RAM", "DISC 1", "NUM DISCS", "DISC 2", "OS", "YEAR"))
 print("----------------------------------------------------------------------")
 
 with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
