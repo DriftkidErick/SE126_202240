@@ -7,10 +7,10 @@
 import csv
 
 record = 0
-print("\nDATA FROM FILE------------------------")
+print("\n--------------------------DATA FROM FILE--------------------------------")
 
-print("{0:8} {1:8} {2}   {3:3}  {4:6}     {5:9} {6:6} {7:2} {8:4}".format("Type", "BRAND", "CPU", "RAM", "DISC 1", "NUM DISCS", "DISC 2", "OS", "YEAR"))
-print("----------------------------------------------------------------------")
+print("{0:8} {1:8}    {2}   {3:3}  {4:6}   {5:9}   {6:6}   {7:2}    {8:4}".format("Type", "BRAND", "CPU", "RAM", "DISC 1", "NUM DISCS", "DISC 2", "OS", "YEAR"))
+print("------------------------------------------------------------------------")
 
 with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
     
@@ -47,7 +47,7 @@ with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
             manu = "Dell"
 
         elif manu == "HP":
-            manu = "Hewlett Packard"
+            manu = "HP"
 
         elif manu == "GW":
             manu = "Gateway"
@@ -60,6 +60,9 @@ with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
         
         elif num_disk == "2":
             second_disc = rec[4]
+            os = rec[7]
+            year = rec[8]
+
             
             
 
@@ -67,7 +70,8 @@ with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
         
 
 
-        print("{0:8} {1:8} {2}   {3:3}  {4:6}     {5:9} {6:6} {7:2} {8:4}".format(type_, manu, cpu, ram, first_disk, num_disk, second_disc, os, year))
-print("----------------------------------------------------")
+        print("{0:8} {1:8}    {2}    {3:3}  {4:6}      {5:9}{6:6}   {7:2}   {8:4}".format(type_, manu, cpu, ram, first_disk, num_disk, second_disc, os, year))
+print("------------------------------------------------------------------------")
 
-print("\n\nRecords: {0}".format(record))
+print("\nTotal Records Recorded: {0}".format(record))
+print("\nThank you for using our program. Have a good day =)!!!")
