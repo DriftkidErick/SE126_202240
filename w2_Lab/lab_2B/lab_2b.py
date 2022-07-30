@@ -2,7 +2,7 @@
 
 #Prompt: You have been asked to produce a report that lists all the computers in the csv file lab2b.csv. Your report should look like the following sample output. The last line should print the number of computers in the file.
 
-#main code below----
+#main code below------------------------------------------------------------
 
 import csv
 
@@ -62,13 +62,6 @@ with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
             second_disc = rec[4]
             os = rec[7]
             year = rec[8]
-
-            
-            
-
-
-        
-
 
         print("{0:8} {1:8}    {2}    {3:3}  {4:6}      {5:9}{6:6}   {7:2}   {8:4}".format(type_, manu, cpu, ram, first_disk, num_disk, second_disc, os, year))
 print("------------------------------------------------------------------------")
