@@ -8,9 +8,9 @@ total_records = 0 # counts total records
 
 total_rooms = 0 # total rooms
 
-print("{0:19}\t{1:5}\t{2:4}\t{3:4}".format("Room", "Max", "Min", "Over"))
+print("{0:19}\t{1:5}\t{2:4} {3:4}".format("Room", "Max", "Min", "Over"))
 
-with open("w2_Lab\lab2a.csv") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/w2_Lab/lab_2a/lab2a.csv") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -29,7 +29,7 @@ with open("w2_Lab\lab2a.csv") as csvfile:
 
             total_rooms += 1
 
-            print("{0:18}\t{1:3}\t{2:3}\t{3:3}".format(room, max, min, over))
+            print("{0:18}\t{1:3}\t{2:3} {3:3}".format(room, max, min, over))
     
 print("\nTotal records processed are {}".format(total_records))
 print("\nTotal rooms over the limit are {}".format(total_rooms))
