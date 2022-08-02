@@ -1,4 +1,4 @@
-#Lab 2A Class Lav
+#Lab 2A Class Lab Erick Cordon
 
 #Prompt: The csv file lab2a.csv contains a list of rooms, the maximum number of people that the room can accommodate, and the number of people currently registered for the event.  Write a program that displays all rooms that are over the maximum limit of people and the number of people that have to be notified that they will have to be put on the wait list. After the file is completely processed the program should display the number of records processed and the number of rooms that are over the limit.
 
