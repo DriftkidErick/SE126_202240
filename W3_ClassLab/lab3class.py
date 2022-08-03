@@ -37,14 +37,7 @@ with open("C:/Users/008004507/Desktop/SE126_202240/W3_ClassLab/voters_202040.csv
         if reg == "Y" and vot == "N":
             noVot += 1
 
-
-#Number of individuals not eligible to register.
-#Number of individuals who are old enough to vote but have not registered.
-#Number of individuals who are eligible to vote but did not vote.
-#Number of individuals who did vote.
-#Number of records processed.
-
-
+#--------------Out of Loop------
 print("\n\tNumber of individuals not eligible to register: {}".format(notOLD))
 
 print("\n\tNumber of individuals who are old enough to vote but have not registered: {}".format(noReg))
@@ -54,6 +47,3 @@ print("\n\tNumber of individuals who are eligible to vote but did not vote: {}".
 print("\n\tNumber of individuals who did vote: {}".format(yesVot))
 
 print("\nTotal number of records processed: {}".format(totalrecs))
-
-
-        
