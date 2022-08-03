@@ -12,7 +12,7 @@ totalrecs = 0
 
 import csv
 
-with open("/Users/erickcordon/Desktop/SE126_202240/SE126_202240/W3_ClassLab/voters_202040.csv") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/W3_ClassLab/voters_202040.csv") as csvfile:
 
     file = csv.reader(csvfile)
 

@@ -12,7 +12,7 @@ print("\n--------------------------DATA FROM FILE-------------------------------
 print("{0:8} {1:8}    {2}   {3:3}  {4:6}   {5:9}   {6:6}   {7:2}    {8:4}".format("Type", "BRAND", "CPU", "RAM", "DISC 1", "NUM DISCS", "DISC 2", "OS", "YEAR"))
 print("------------------------------------------------------------------------")
 
-with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/w2_Lab/lab_2B/lab2b.csv") as csvfile:
     
     file = csv.reader(csvfile)
 
@@ -59,7 +59,7 @@ with open("w2_Lab/lab_2B/lab2b.csv") as csvfile:
             second_disc = "---"
         
         elif num_disk == "2":
-            second_disc = rec[4]
+            second_disc = rec[6]
             os = rec[7]
             year = rec[8]
 
