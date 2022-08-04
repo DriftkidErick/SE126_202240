@@ -102,9 +102,9 @@ for i in range(0,records):
             repL += 1
 
 
-print("There are {0} desktops needed to be replaced. Total cost will be ${1}".format(repD, repD * 2000))
+print("There are {0} desktops needed to be replaced. Total cost will be ${1}".format(repD, repD * 2000)) # cost per desktop is 2k
 
-print("There are {0} laptops needed to be replaced. Total cost will be ${1}".format(repL, repL * 1500))
+print("There are {0} laptops needed to be replaced. Total cost will be ${1}".format(repL, repL * 1500)) #cost per laptop is 1.5k
 
 
 
