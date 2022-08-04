@@ -69,7 +69,7 @@ yr = []
 
 #connect to the file location
 #CONNECTED TO FILE---------------------
-with open("/Users/kmtruchon/Downloads/lab2b.csv") as csvfile:
+with open("/Users/erickcordon/Desktop/SE126_202240/SE126_202240/W3_ClassLab/lab3a.csv") as csvfile:
 
     #access the file's data
     file = csv.reader(csvfile)
