@@ -32,7 +32,7 @@ second_disk = []
 os = []
 yr = []
 
-with open("/Users/erickcordon/Desktop/SE126_202240/SE126_202240/W3_ClassLab/lab3a.csv") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/W3_ClassLab/lab3a.csv") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -63,7 +63,7 @@ with open("/Users/erickcordon/Desktop/SE126_202240/SE126_202240/W3_ClassLab/lab3
 
 
 
-print("-----------Data File----------------------")
+print("------------------------------------Data File----------------------------------------")
 
 for index in range (0,records):
 
@@ -87,7 +87,7 @@ for index in range (0,records):
 
     print("#{9}:\t{0:8}\t{1}\t {2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}".format(device[index], brand[index], cpu[index], ram[index], first_disk[index], num_hdd[index], second_disk[index], os[index], yr[index], index))
 
-print("------------------------------------------------------")
+print("-------------------------------------------------------------------------------------")
 
 repD = 0 
 repL = 0
