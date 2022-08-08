@@ -110,5 +110,4 @@ print("\nThere are {0} laptops needed to be replaced. Total cost will be ${1}".f
 
 
 
-
-            
+    
