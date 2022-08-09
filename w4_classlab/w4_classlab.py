@@ -51,6 +51,8 @@ for i in range(0,records):
     num_avg = (testf[i] + tests[i] + testt[i])/3
     avg.append(num_avg)
     print("{0:13} \t{1:13}\t{2}\t{3}\t{4}\t{5:7.2f}".format(ln[i], fn[i], testf[i], tests[i], testt[i],avg[i]))
+print("-------------------------------------------------------------------------------------------\n")
+
 
 print("\n\n--------------------------------Updated Data With Letter Avg------------------------------------------")
 
