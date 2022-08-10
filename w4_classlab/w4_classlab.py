@@ -18,7 +18,7 @@ letgr = []
 records = 0
 classavg = 0
 
-with open("/Users/erickcordon/Desktop/SE126_202240/w4_classlab/listPractice1.txt") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/w4_classlab/listPractice1.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
