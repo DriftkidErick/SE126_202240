@@ -1,4 +1,28 @@
-#MAKE SURE TO ADD CORRESPODING MOTTOS TO HOUSE
+#Lab 4B Erick Cordon
+
+#prompt: Process the lists to print the them as they appear in the file Re-process the lists to add the House Motto (dependent on Field4/Allegiance; see motto chart below) Re-Process the lists to print each record fully with the House Mottos Re-process the lists to find the average age within the list, then Print the total number of people in the list Print the average age - rounded to a whole number {:.0f} Print tallies for each allegiance (Field4)
+
+#Definitions:
+#firstname = [] first name
+#lastname = [] last name
+#age = [] age of person
+#nickname = [] nick name of person
+#house = [] house of alligience 
+
+#line = [] empty list for house text
+    
+#BELOW ARE THE COUNTING VARIABLES
+#stark = 0 
+#bara = 0  
+#tully = 0              
+#watch = 0              
+#lanni = 0
+#targa = 0
+
+#ageave = 0  used to add up ages
+#records = 0 used to count total records processed
+
+#Main Code Below-----------------------------------------------------------------------------------------------------
 
 import csv
 
@@ -12,6 +36,7 @@ nickname = []
 house = []
 
 records = 0
+
 with open ("C:/Users/008004507/Desktop/SE126_202240/w4_classlab/lab4A_GOT_NEW.txt") as csvfile:
 
     file = csv.reader(csvfile)
