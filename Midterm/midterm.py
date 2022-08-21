@@ -228,24 +228,6 @@ while pick != 5:
                 break
 
 
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
     pick = menu()
 
 print("Thank you for using our software =D")
