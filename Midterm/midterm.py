@@ -1,18 +1,33 @@
+#Midterm, Erick Cordon
+
+#or your Midterm Project in SE126 you will be building a program of your own design! You may work in groups of up to 2 people or alone to design a program and file of your choosing.  The program must include the following:a file to be read and processed, data stored into respective lists.csv or .txt import csv will work for both of these file types, but all data must be separated with a comma! >= 2 lists these can be populated from a file or by hand showcase understanding of control flow structures showcase understanding of self-built functions Starting Documentation include a brief program description include a variable dictionary with data types including your lists! Documentation for anything used not introduced in the course Creativity!
+
+#Varriable def:
+#album = [] NAME OF ALBUMS
+#rating = [] RATING FROM METACRITIC
+#sales = [] CURRENT ALBUM SALES
+#year = [] RELEASE DATE OF ALBUM
+#cost = [] COST OF CD
+#gross = [] Used to calculate gross sales
+#star = [] adds a start to top rated albums
+#records = 0 TOTAL TIMES 
+
+#avgsls = sale[i]*cost[i] - Used to calculate gross sales per index
+
+#def menu() - Used as a start menu/ gives users options on what they want to do
+#def mood() - Pick a random album and generates a song based off an album
+
+
 import csv
 import random
 
-#Kanye album sales
-#num avg
-#rating
-#sort list from most sales to least
-#sort list from best reviewed to least reviewed
-
+#Function Def:
 def menu():
 
     print("1. Print Original Files")
     print("2. Print Gross Album sales")
     print("3. Print Rating for ablums from METACRITIC")
-    print("4. Recommend a Random Song")
+    print("4. Recommend a Random Song Based Off An Album")
     print("5. Exit")
 
     choice = int(input("Please Select One of the following: "))
@@ -40,10 +55,11 @@ def mood():
 
     while choice2 < 0 or choice2 > 10:
         print("*Error!*")
-        choice2 = int(input("Please enter your selection: "))
+        choice2 = int(input("\nPlease reselect the album you would like to listen to: "))
 
     return choice2
 
+#Main Code Below
 
 
 album = []
@@ -51,7 +67,7 @@ rating = []
 sales = []
 year = []
 cost = []
-num_avg = []
+gross = []
 
 records = 0
 
@@ -72,7 +88,7 @@ for i in range(0,records):
 
     avgsls = sales[i]*cost[i]
 
-    num_avg.append(avgsls)
+    gross.append(avgsls)
 
 
 pick = menu()
@@ -99,7 +115,7 @@ while pick != 5:
         print("-------------------------------------------------------------------------------------------------------------")
 
         for i in range(0,records):
-            print("{0:32}\t{1:18}\t{2:8}\t{3:0.2f}".format(album[i],year[i],sales[i],num_avg[i]))
+            print("{0:32}\t{1:18}\t{2:8}\t{3:0.2f}".format(album[i],year[i],sales[i],gross[i]))
         print("-------------------------------------------------------------------------------------------------------------")
 
 
@@ -121,8 +137,11 @@ while pick != 5:
 
             print("{0:32}\t{1:18}\t{2:8}\t {3}\t{4:5}".format(album[i],year[i],sales[i],rating[i],star[i]))
 
+        print("\n*If an album has a star next to it, it is a top recommended album*\n")    
+
     if pick == 4:
 
+        print("\nHello! Please pick one of the following albums below!")
         gen = mood()
 
         while gen != 11:
@@ -230,7 +249,7 @@ while pick != 5:
 
     pick = menu()
 
-print("Thank you for using our software =D")
+print("\nThank you for using our software. Have a good life =D!")
 
 
 
