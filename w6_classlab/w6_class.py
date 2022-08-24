@@ -9,8 +9,7 @@
 #dob = [] date of birth 
 #record = 0 counting var
 #search_count = 0 count total searches
-
-#function def:
+#found = -1 starts a negative one because this is not a valid index
 
 #main code below:
 
@@ -24,7 +23,7 @@ record = 0
 search_count = 0
 
 
-with open("C:/Users/Erick/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
 
     file =csv.reader(csvfile)
 
@@ -74,6 +73,19 @@ while answer == "y":
         print("Your search for ", search, " has NOT BEEN FOUND.")
         print("Please check for errors")
 
-print("\nLoops preformed for search: {}".format(search_count))
+    print("\nLoops preformed for search: {}".format(search_count)) #search counted through loop
+
+
+    search_count = 0 #this is placed here to reset after a search
+    answer = input("\n\nWould you like to add another person? [y/n]:")
+    answer = answer.lower()
+
+    while answer != "y" and answer != "n":
+        print("**Error**")
+        answer = input("\n\nWould you like to add another person? [y/n]:")
+        answer = answer.lower()
+
+
+print("\n\nThank you for using our program =D!!!!\n")
 
 
