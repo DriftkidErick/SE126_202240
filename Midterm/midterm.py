@@ -71,7 +71,7 @@ gross = []
 
 records = 0
 
-with open ("C:/Users/Erick/Desktop/SE126_202240/Midterm/KanyeSales.csv") as csvfile:
+with open ("C:/Users/008004507/Desktop/SE126_202240/Midterm/KanyeSales.csv") as csvfile:
 
     file = csv.reader(csvfile)
 
