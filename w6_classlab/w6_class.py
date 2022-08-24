@@ -30,8 +30,8 @@ with open("C:/Users/008004507/Desktop/SE126_202240/w6_classlab/lab5_updated.txt"
     for rec in file:
         record += 1
 
-        lastname.append(rec[0])
-        firstname.append(rec[1])
+        lastname.append(rec[0].lower())
+        firstname.append(rec[1].lower())
         dob.append(rec[2])
 
 print("-------------------------------------------------------------------------------")
@@ -41,7 +41,7 @@ print("-------------------------------------------------------------------------
 
 for i in range(0,record): #original data
 
-    print("INDEX: {0} \t{1:15} \t{2:15} \t{3}".format(i, lastname[i],firstname[i],dob[i]))
+    print("INDEX: {0} \t{1:15} \t{2:15} \t{3}".format(i, lastname[i].title(),firstname[i].title(),dob[i])) #.title() used to uppercase on display
 
 print("\n\n") #Everything Works Up to Here
 
@@ -49,7 +49,7 @@ answer = "y"#Everything Below Is in Testing Stage
 
 while answer == "y":
 
-    search = input("Enter the lastname of the people you would like to find:  ")
+    search = input("Enter the lastname of the people you would like to find:  ").lower()
 
     found = -1 
 
@@ -67,7 +67,7 @@ while answer == "y":
 
         print("Person found ", search, " at INDEX: ", found)
 
-        print("\t\t\t{0:10} \t {1:10} \t {2:10}".format(lastname[found],firstname[found],dob[found]))
+        print("\t\t\t{0:10} \t {1:10} \t {2:10}".format(lastname[found].title(),firstname[found].title(),dob[found]))#.title() uses to upper case in final display
 
     else:
         print("Your search for ", search, " has NOT BEEN FOUND.")
