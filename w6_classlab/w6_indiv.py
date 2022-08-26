@@ -4,7 +4,12 @@
 
 #Varriable Definitions:
 
-#Function Definitions:
+#lastname = [] empty list for last name
+#firstname = [] empty list for first name
+#dob = [] empty list for date of birth
+#records = 0 counting var 
+#search_count = 0 counts how many searches are processed
+
 
 #Main Code Below----------------------------------------
 
@@ -13,10 +18,11 @@ import csv
 lastname = []
 firstname = []
 dob = []
+
 records = 0
 search_count = 0
 
-with open("C:/Users/008004507/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
+with open("/Users/erickcordon/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -40,13 +46,13 @@ answer = "y"
 
 while answer == "y":
 
-    search = input("Please enter the birthdate you are looking for: ")
+    search = input("Please enter the birthdate you are looking for: ")#asks for the dob 
 
     found = -1
 
     for i in range(0,records):
 
-        search_count += 1
+        search_count += 1 #adds one per every search 
 
         if search == dob [i]:
 
@@ -56,7 +62,7 @@ while answer == "y":
 
     if found > 0: #This is for when index is found
 
-        print("\nPerson found ", search," at index", found)
+        print("\nPerson found ", search," at index", found) #prints the correct person's data seached if found
 
         print("\t\t\t{0:10} \t {1:10} \t {2:10}".format(lastname[found].title(),firstname[found].title(),dob[found])) #the found in index will only pring what is found
 
