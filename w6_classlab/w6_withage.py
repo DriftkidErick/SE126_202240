@@ -10,10 +10,18 @@
 #records = 0 counting var 
 #search_count = 0 counts how many searches are processed
 
+#bday = datetime.strptime(dob[found], "%m/%d/%Y") #STUDENTS DATE AND TIME
+#tday = datetime.now() CURRENT DATE AND TIME
+
+#age = tday - bday#(todays dates - found persons birthdate) THIS IS USED TO GET AGE FROM DATETIME
+#total = (age.total_seconds() /(3.141592653589793 * 10** 7)) # THIS IS TO THE TOTAL YEARS /.totalsecond converts the datetime to seconds /seconds divded by (pi * 10 to the 7th power)/
+
+#age_total = int(total) #prevents from total rounding up 
 
 #Main Code Below----------------------------------------
-
 import csv
+import datetime
+from datetime import datetime, date, timedelta
 
 lastname = []
 firstname = []
@@ -66,6 +74,18 @@ while answer == "y":
 
         print("\t\t\t{0:10} \t {1:10} \t {2:10}".format(lastname[found].title(),firstname[found].title(),dob[found])) #the found in index will only pring what is found
 
+        #below is what i used to calulate age
+        bday = datetime.strptime(dob[found], "%m/%d/%Y") #Seperates the persons birthday by month/day/year
+        tday = datetime.now()
+
+        age = tday - bday#(todays dates - found persons birthdate)
+        total = (age.total_seconds() /(3.141592653589793 * 10** 7)) # .totalsecond converts the datetime to seconds /seconds divded by (pi * 10 to the 7th power)/
+
+        age_total = int(total) #prevents from total rounding up 
+
+        print("\nThe student is :{0:2.0f} years old".format(age_total))
+
+
     else: #this is for errors
         print("Your search for ", search, "has NOT BEEN FOUND")
         print("Please check for any errors")
@@ -79,7 +99,7 @@ while answer == "y":
 
     while answer != "y" and answer != "n": # mis-input loop
         print("**Error**")
-        answer = input("\n\nWould you like to add another person? [y/n]: ")
+        answer = input("\n\nWould you like to add another person? [y/n]: ").lower()
         answer = answer.lower()
 
 print("\n\nThank you for using our program =D")
