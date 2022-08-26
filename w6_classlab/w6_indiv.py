@@ -60,7 +60,7 @@ while answer == "y":
 
     print("\n\nSearch is being processed")
 
-    if found > 0: #This is for when index is found
+    if found > -1: #This is for when index is found
 
         print("\nPerson found ", search," at index", found) #prints the correct person's data seached if found
 
