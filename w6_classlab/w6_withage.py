@@ -30,7 +30,7 @@ dob = []
 records = 0
 search_count = 0
 
-with open("/Users/erickcordon/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
+with open("C:/Users/Erick/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -83,7 +83,7 @@ while answer == "y":
 
         age_total = int(total) #prevents from total rounding up 
 
-        print("\nThe student is :{0:2.0f} years old".format(age_total))
+        print("\nThe student is : {0:2.0f} years old".format(age_total))
 
 
     else: #this is for errors

@@ -22,7 +22,7 @@ dob = []
 records = 0
 search_count = 0
 
-with open("/Users/erickcordon/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
+with open("C:/Users/Erick/Desktop/SE126_202240/w6_classlab/lab5_updated.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
