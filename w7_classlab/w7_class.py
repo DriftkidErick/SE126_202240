@@ -4,46 +4,40 @@
 
 #Varrible Def:
 
+def selector():
+    r = input("\nPlease select which ROW you would like to be seated in [1-7]: ")
+
+    s= input("Please select which Seat you would like to sit in [A-D]: ").upper()
+
+    return (r,s)
+
+
+
+
+    
+
 #Main Code Below-----------------------------------------------------
 
-# https://stackoverflow.com/questions/24106733/replace-an-item-in-a-list-based-on-user-input (Check this out)
-# https://stackoverflow.com/questions/49633640/how-to-replace-string-character-pattern-using-python-in-csv-file#:~:text=After%20opening%20the%20file%20with,the%20string%20characters%20you%20desire.
 
-import csv
-
-row_a = []
-row_b = []
-row_c = []
-row_d = []
-
-records = 0
-search_count = 0 
-
-with open("C:/Users/Erick/Desktop/SE126_202240/w7_classlab/Seat.csv") as csvfile:
-    file = csv.reader(csvfile)
-
-    for rec in file:
-        records += 1
-
-        row_a.append(rec[0])
-        row_b.append(rec[1])
-        row_c.append(rec[2])
-        row_d.append(rec[3])
+seatA = ['A','A','A','A','A','A','A']
+seatB = ['B','B','B','B','B','B','B']
+seatC = ['C','C','C','C','C','C','C']
+seatD = ['D','D','D','D','D','D','D']
 
 print("Row")
 
-for i in range(0,records):
+for i in range(0,7):
+    print(i + 1, seatA[i],seatB[i],seatC[i],seatD[i])
 
-    print("{0} \t{1} {2} \t{3} {4}".format(i + 1, row_a[i], row_b[i], row_c[i], row_d[i]))
 
-print("Close") #Delete this used just for closing
+r = int(input("\nPlease select which ROW you would like to be seated in [1-7]: "))
 
-answer = "y"
+while r == 1:
+    seatA = input("Please select which SEAT you would like to sit in [A-D]: ").upper()
+    if seatA[r-1] == "A":
+        seatA[r-1].remove("A","X")
+        print(seatA,seatB)
 
-while answer == "y": #trying to build a search/input
+    else:
+        print("**erorr**")
 
-    choice = input=("Please select the row you would like: ")
-    search = input=("Please Enter the seat you would like: ")
-
-    for i in range(0,records):
-        
