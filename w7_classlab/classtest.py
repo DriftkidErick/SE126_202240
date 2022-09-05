@@ -1,10 +1,13 @@
-from os import system, name 
-from time import sleep 
-def clear():  
+from os import system, name
+from time import sleep
 
-     # for windows  
-     if name == 'nt':
-          _ = system('cls') 
+def clear():
+   # for windows
+   if name == 'nt':
+      _ = system('cls')
+   # for mac 
+   else:
+    _ = system('clear')
 
 def more():
 

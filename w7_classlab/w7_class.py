@@ -7,13 +7,15 @@ from os import system, name
 
 from time import sleep 
 
-def clear():  
+def clear():
+   # for windows
+   if name == 'nt':
+      _ = system('cls')
+   # for mac 
+   else:
+    _ = system('clear')
 
-     # for windows  
-     if name == 'nt':
-          _ = system('cls') 
-
-'''def more():
+def more():
 
     answer = input("Would you like to add another seat? [y/n]: ").lower()
 
@@ -25,7 +27,23 @@ def clear():
 
     
     return (answer)
-'''
+
+def rowPick():
+
+    r = int(input("\n\tPlease enter the row of the seat you want to pick: "))
+
+    while r < 1 and r > 7:
+        r = int(input("\n\t**INVALID INPUT** \nPlease enter the row of the seat you want to pick: "))
+    
+    return ([r - 1])
+
+def seatPick():
+    s = input("\tPlease enter the seat letter you would like to pick: ").upper()
+
+    while s != 'A' and s != 'B' and s != 'C' and s != 'D':
+        s = input("\t**INVALID INPUT** \nPlease enter the seat letter you would like to pick: ").upper()
+
+    return (s)
 
 #Main Code Below-----------------------------------------------------
 
@@ -37,51 +55,34 @@ seatD = ['D','D','D','D','D','D','D']
 print("Row")
 
 for i in range(0,7):
-    print(i + 1, seatA[i],seatB[i],seatC[i],seatD[i])
-
+    print("{}  {} {}\t{} {}".format(i + 1, seatA[i],seatB[i],seatC[i],seatD[i]))
 
 answer = "y"
 
 while answer =="y":
-    answer = int(input("Please enter the row you would like to sit in [1-7]: "))
-
-    r = (answer -1)    
-
-    s = input("Please enter the seat you would like [A - D]: ").upper()
-
     
-    clear()
+    row = rowPick()
 
-    if r >= 0 or r <= 7 :    
-        if s == "A":
-            seatA[r] = "x"
+    seat = seatPick()
 
-        elif s == "B":
-            seatB[r] = "x"
+    flag = "taken"
+
+    while row[0] > 0 and row[0] < 7:  
+
+        if seat[1] == "A":
+
+            seatA[row[0],seat[1]] = "x"
             
-        
-        elif s == "C":
-            seatC[r] = "x"
-            
+            if seatA[i] == "x":
+                flag = "taken" 
 
-        elif s == "D":
-            seatD[r] = "x"
+    for i in range(0,7):
+        print(i + 1, seatA[i],seatB[i],seatC[i],seatD[i])
 
-        print("row")
-        for i in range(0,7):
-            print(i + 1, seatA[i],seatB[i],seatC[i],seatD[i])
-
-    answer = input("Would you like to add another seat?: ")
-
-    clear()
-
-    #for i in range(0,7):
-        #if r >= 0 or r <= 7 and s == "A": 
-        #if seatA[i] == "x":
-            #print("Eror")
-           # answer = input("Would you like to add another seat?: ")
+    answer = more() #The function that asks the user if they want to add another seat
 
 
+print("out of loop")
 print("Have a good day =D")
     
 
