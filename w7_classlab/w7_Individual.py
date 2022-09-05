@@ -49,6 +49,8 @@ while answer == "y":
 
     min = 0 
 
+    max = records -1
+
     guess = int((min + max) /2 )
 
     while min < max and search != lname [guess]:
