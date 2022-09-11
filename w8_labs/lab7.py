@@ -5,6 +5,7 @@
 #varriable Def():
 
 #Function Def():
+import csv
 
 def menu():
 
@@ -20,9 +21,36 @@ def menu():
     while pick != "1" and pick != "2" and pick != "3" and pick !="4" and pick != "5":
         print("\nSorry...An invalid input was made. Please try again")
 
-        pick = print(input("Hello, Please make a selection friom the following below [1-5]: "))
+        pick = input("Hello, Please make a selection friom the following below [1-5]: ")
 
     return pick
+
+def bubble(index):
+
+
+    if(fname[index] > fname[index + 1]):
+
+        #if above is true, swap places!
+
+        temp = fname[index]
+
+        fname[index] = fname[index + 1]
+
+        fname[index + 1] = temp
+
+
+        #swap all other values
+
+        temp = age[index]
+
+        age[index] = age[index + 1]
+
+        age[index + 1] = temp
+
+        temp = lname[index]
+        lname[index] = lname[index + 1]
+        lname[index + 1] = temp
+
 
 def again():
 
@@ -42,9 +70,6 @@ def goodbye():
 
 #Main Code Below ------------------------------------------------------------------------------------------
 
-import csv
-from tkinter.tix import InputOnly
-
 id = []
 lname= []
 fname = []
@@ -53,7 +78,7 @@ allegiance = []
 
 records = 0
 
-with open("/Users/erickcordon/Desktop/SE126_202240/w8_labs/GOT_bubble_sort_7.txt") as csvfile:
+with open("C:/Users/Erick/Desktop/SE126_202240/w8_labs/GOT_bubble_sort_7.txt") as csvfile:
 
     csv_reader = csv.reader(csvfile)
 
@@ -86,12 +111,17 @@ while answer == "y":
     choice = menu()
 
     if choice == "1":
+        for i in range(0 , records -1):
+
+            for index in range(0, records - 1):
+
+                sort = bubble(index)
 
         search = input("Please enter the FIRST NAME of the person you are looking for: ").lower()
 
         min = 0 #this is the lowest starting index
         max = records -1 #this is the highest starting index
-        guess = int((min + max) / 2) #this is the middle point of the index
+        guess = int((min + max) // 2) #this is the middle point of the index
 
         while min < max and search != fname[guess]: 
 
@@ -108,7 +138,7 @@ while answer == "y":
 
             print("\n\t\tYour search results for", search,": ")
 
-            #print("Index: {}\t{}\t{}\t{}\t{}\t{}".format(i[guess],lname[guess],fname[guess],age[guess],allegiance[guess]))
+            print("Index: {0}\t{1:15}\t{2:15}\t{3:8}\t{4:18}".format(i[i],lname[i],fname[i],age[i],allegiance[i])) #this is the print error location
 
         else:
             print("\n\tSorry your search for",search,"could NOT be found")

@@ -6,7 +6,7 @@ lastname = []
 firstname = []
 age = []
 
-with open("C:/Users/008004507/Desktop/SE126_202240/bubblesort/GOT_bubble_sort.txt") as csvfile:
+with open("C:/Users/Erick/Desktop/SE126_202240/bubblesort/GOT_bubble_sort.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
