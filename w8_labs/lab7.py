@@ -218,6 +218,27 @@ while answer == "y":
         found = []
         f = - 1
 
+        for i in range(0 , records):
+
+            if search == lname [i]:
+
+                found.append(i) #this stores index of found last names to the list
+
+                f = i
+            
+        if f >= 0:
+
+            print("Your search for", search, ": ")
+
+            for i in range(0 , len(found)):
+                print("\t\t\tIndex: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:8}{5:18}".format(found[i],idP[found[i]].title(),lname[found[i]].title(),fname[found[i]].title(),age[found[i]],allegiance[found[i]].title())) 
+
+        else:
+
+            print("Your search for", search, "could NOT be found")
+            print("Please make sure your spelling is correct")
+
+
 
 
 
