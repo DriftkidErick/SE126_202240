@@ -25,41 +25,72 @@ def menu():
 
     return pick
 
-def bubble(index):
+def bubble():
+    
+    for i in range(0, records - 1):#outter loop
+
+        for index in range(0, records - 1):#inner loop
+
+            if(fname[index] > fname[index + 1]):
+
+                #if above is true, swap places!
+
+                temp = fname[index]
+
+                fname[index] = fname[index + 1]
+
+                fname[index + 1] = temp
 
 
-    if(fname[index] > fname[index + 1]):
+                #swap all other values
 
-        #if above is true, swap places!
+                temp = age[index]
 
-        temp = fname[index]
+                age[index] = age[index + 1]
 
-        fname[index] = fname[index + 1]
+                age[index + 1] = temp
 
-        fname[index + 1] = temp
+                temp = idP[index]
+                idP[index] = idP[index + 1]
+                idP[index + 1] = temp
+
+def idbubble():
+
+    for i in range(0, records - 1):#outter loop
+
+        for index in range(0, records - 1):#inner loop
+
+            if(idP[index] > idP[index + 1]):
+
+                #if above is true, swap places!
+
+                temp = fname[index]
+
+                fname[index] = fname[index + 1]
+
+                fname[index + 1] = temp
 
 
-        #swap all other values
+                #swap all other values
 
-        temp = age[index]
+                temp = age[index]
 
-        age[index] = age[index + 1]
+                age[index] = age[index + 1]
 
-        age[index + 1] = temp
+                age[index + 1] = temp
 
-        temp = lname[index]
-        lname[index] = lname[index + 1]
-        lname[index + 1] = temp
-
+                temp = idP[index]
+                idP[index] = idP[index + 1]
+                idP[index + 1] = temp
 
 def again():
 
-    answer = input("Would you like to go again? [y/n]: ").lower()
+    answer = input("Would you like to add another search? [y/n]: ").lower()
 
     while answer != "y" and answer != "n":
         print("\nSorry wrong input")
 
-        answer = input("Would you like to go again? [y/n]: ").lower()
+        answer = input("Would you like to add another search? [y/n]: ").lower()
 
     return answer
 
@@ -70,7 +101,7 @@ def goodbye():
 
 #Main Code Below ------------------------------------------------------------------------------------------
 
-id = []
+idP = []
 lname= []
 fname = []
 age = []
@@ -86,7 +117,7 @@ with open("C:/Users/Erick/Desktop/SE126_202240/w8_labs/GOT_bubble_sort_7.txt") a
 
         records += 1
 
-        id.append(rec[0].lower())
+        idP.append(rec[0].lower())
         lname.append(rec[1].lower())
         fname.append(rec[2].lower())
         age.append(rec[3])
@@ -99,7 +130,7 @@ print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}\t{5:15}".format("Num","ID Code
 print("------------------------------------------------------------------------------------------------------------------")
 
 for i in range(0,records):
-    print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}\t{5:15}".format(i,id[i],lname[i],fname[i],age[i],allegiance[i]))
+    print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}\t{5:15}".format(i,idP[i].title(),lname[i].title(),fname[i].title(),age[i],allegiance[i].title()))
 
 
 answer = "y"
@@ -111,11 +142,10 @@ while answer == "y":
     choice = menu()
 
     if choice == "1":
-        for i in range(0 , records -1):
 
-            for index in range(0, records - 1):
-
-                sort = bubble(index)
+        print("\nYou've selected search FIRST NAME")
+        
+        sort = bubble()
 
         search = input("Please enter the FIRST NAME of the person you are looking for: ").lower()
 
@@ -138,12 +168,59 @@ while answer == "y":
 
             print("\n\t\tYour search results for", search,": ")
 
-            print("Index: {0}\t{1:15}\t{2:15}\t{3:8}\t{4:18}".format(i[i],lname[i],fname[i],age[i],allegiance[i])) #this is the print error location
-
+            print("\t\t\tIndex: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:8}{5:18}".format(guess,idP[guess].title(),lname[guess].title(),fname[guess].title(),age[guess],allegiance[guess].title())) 
         else:
             print("\n\tSorry your search for",search,"could NOT be found")
 
             print("Please check your spelling")
+
+    if choice == "2":
+
+        print("\nYou are now searching based on ID Code")
+
+        sort = idbubble()
+
+        search = input("\nPlease Enter the ID CODE of the person/people you searhing for: ")
+
+        min = 0
+        max = records - 1
+        guess = int((min + max) / 2)
+
+        while min < max and search != idP[guess]:
+
+            if search < idP[guess]:
+
+                max = guess - 1
+            
+            else:
+
+                min = guess + 1 
+            
+            guess = int((min + max) / 2)
+
+        if search == idP[guess]:
+
+            print("\n\t\tYour search results for", search, ": ")
+
+            print("\t\t\tIndex: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:8}{5:18}".format(guess,idP[guess].title(),lname[guess].title(),fname[guess].title(),age[guess],allegiance[guess].title())) 
+        
+        else:
+
+            print("\n\t\tYour search for", search," could NOT be found")
+            print("\tPlease check for spelling errors")
+
+    if choice == "3":
+
+        print("Search based off of LAST NAME")
+
+        search = input("Please enter the LAST NAME of the person/people you are searching for: ")
+
+        found = []
+        f = - 1
+
+
+
+
 
     
 
@@ -151,8 +228,6 @@ while answer == "y":
 
 done = goodbye()
 
-
-#add a bubble search fuynction
 
 
 
