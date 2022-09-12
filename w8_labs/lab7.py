@@ -29,12 +29,12 @@ from os import system, name
 from time import sleep 
 
 def clear():
-   # for windows
-   if name == 'nt':
-      _ = system('cls')
-   # for mac 
-   else:
-    _ = system('clear')
+# for windows
+    if name == 'nt':
+        _ = system('cls')
+# for mac 
+    else:
+        _ = system('clear')
 
 def menu():
 
@@ -154,7 +154,7 @@ allegiance = []
 
 records = 0
 
-with open("C:/Users/Erick/Desktop/SE126_202240/w8_labs/GOT_bubble_sort_7.txt") as csvfile:
+with open("C:/Users/008004507/Desktop/SE126_202240/w8_labs/GOT_bubble_sort_7.txt") as csvfile:
 
     csv_reader = csv.reader(csvfile)
 
@@ -193,7 +193,7 @@ while answer == "y":
         print("\nYou've selected search FIRST NAME")
         
         sort = bubble() #calls the bubble sort function
- 
+
         search = input("Please enter the FIRST NAME of the person you are looking for: ").lower()
 
         min = 0 #this is the lowest starting index
@@ -317,12 +317,6 @@ while answer == "y":
     if choice == "5": #exit
 
         print("You have choosen to exit")
-
-    ## answer = input("Would you like to add another search? [y/n]: ").lower()
-
-
-
-
     
 
     answer = again() #ask if you would like another search
