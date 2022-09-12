@@ -200,7 +200,11 @@ while answer == "y":
         max = records -1 #this is the highest starting index
         guess = int((min + max) // 2) #this is the middle point of the index
 
+        search_count = 0
+
         while min < max and search != fname[guess]: 
+
+            search_count += 1
 
             if search < fname[guess]:
 
@@ -216,10 +220,14 @@ while answer == "y":
             print("\n\t\tYour search results for", search,": ")
 
             print("\t\t\tIndex: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:8}{5:18}".format(guess,idP[guess].title(),lname[guess].title(),fname[guess].title(),age[guess],allegiance[guess].title())) 
+
+            
         else:
             print("\n\tSorry your search for",search,"could NOT be found")
 
             print("Please check your spelling")
+        
+        print("BINARY SEARCH LOOPS: {}".format(search_count))
 
     if choice == "2": #search based on ID CODE
 
@@ -233,7 +241,11 @@ while answer == "y":
         max = records - 1
         guess = int((min + max) / 2)
 
+        search_count = 0
+
         while min < max and search != idP[guess]:
+
+            search_count += 1
 
             if search < idP[guess]:
 
@@ -255,6 +267,8 @@ while answer == "y":
 
             print("\n\t\tYour search for", search," could NOT be found")
             print("\tPlease check for spelling errors")
+        
+        print("BINARY SEARCH LOOPS: {}".format(search_count))
 
     if choice == "3": #search based of last name
 
@@ -265,7 +279,11 @@ while answer == "y":
         found = []
         f = - 1
 
+        search_count = 0
+
         for i in range(0 , records):
+
+            search_count += 1
 
             if search == lname [i]:
 
@@ -284,6 +302,8 @@ while answer == "y":
 
             print("Your search for", search, "could NOT be found")
             print("Please make sure your spelling is correct")
+
+        print("Search Loop Iterations Performed: {}".format(search_count))
             
     if choice == "4": #search based off of allegiance
 
@@ -294,7 +314,11 @@ while answer == "y":
         found = []
         f = - 1
 
+        search_count = 0
+
         for i in range(0 , records):
+
+            search_count += 1
 
             if search == allegiance[i]:
 
@@ -313,6 +337,8 @@ while answer == "y":
 
             print("Your search for", search, "could NOT be found")
             print("Please make sure your spelling is correct")
+
+        print("Search Loop Iterations Performed: {}".format(search_count))
 
     if choice == "5": #exit
 
