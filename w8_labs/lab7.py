@@ -1,4 +1,6 @@
-#Lab 7 Erick Cordon
+#Lab 7 
+# Erick Cordon
+
 
 #Prompt: Write a program that gives the user a menu of options to search through the file.
 
@@ -22,17 +24,17 @@
 
 
 #Function Def():
-import csv
+import csv #allows pything to view csv files
 
 from os import system, name 
 
 from time import sleep 
 
 def clear():
-# for windows
+    # for windows
     if name == 'nt':
         _ = system('cls')
-# for mac 
+    # for mac 
     else:
         _ = system('clear')
 
