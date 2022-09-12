@@ -3,9 +3,38 @@
 #Prompt: Write a program that gives the user a menu of options to search through the file.
 
 #varriable Def():
+#idP = [] id list
+#lname= [] last name list
+#fname = [] first name list
+#age = [] age list
+#allegiance = [] allegiance list
+
+#records = 0 records counter
+
+#sort = bubble() calls in the bubble sort function
+
+#min = 0 #this is the lowest starting index
+#max = records -1 #this is the highest starting index
+#guess = int((min + max) // 2) #this is the middle point of the index
+
+#found = [] found list used to store index of searched person
+#f = - 1 lowest index minus start
+
 
 #Function Def():
 import csv
+
+from os import system, name 
+
+from time import sleep 
+
+def clear():
+   # for windows
+   if name == 'nt':
+      _ = system('cls')
+   # for mac 
+   else:
+    _ = system('clear')
 
 def menu():
 
@@ -54,6 +83,14 @@ def bubble():
                 idP[index] = idP[index + 1]
                 idP[index + 1] = temp
 
+                temp = lname[index]
+                lname[index] = lname[index + 1]
+                lname[index + 1] = temp
+
+                temp = allegiance[index]
+                allegiance[index] = allegiance[index + 1]
+                allegiance[index + 1] = temp
+
 def idbubble():
 
     for i in range(0, records - 1):#outter loop
@@ -83,9 +120,17 @@ def idbubble():
                 idP[index] = idP[index + 1]
                 idP[index + 1] = temp
 
+                temp = lname[index]
+                lname[index] = lname[index + 1]
+                lname[index + 1] = temp
+
+                temp = allegiance[index]
+                allegiance[index] = allegiance[index + 1]
+                allegiance[index + 1] = temp
+
 def again():
 
-    answer = input("Would you like to add another search? [y/n]: ").lower()
+    answer = input("\nWould you like to add another search? [y/n]: ").lower()
 
     while answer != "y" and answer != "n":
         print("\nSorry wrong input")
@@ -97,7 +142,7 @@ def again():
 def goodbye():
 
     print("\nThank you for using our program")
-    print("\nThe Lannisters send their regards.")
+    print("\n\t\tThe Lannisters send their regards.")
 
 #Main Code Below ------------------------------------------------------------------------------------------
 
@@ -139,14 +184,16 @@ while answer == "y":
 
     print("\n\n")
 
-    choice = menu()
+    choice = menu() #calls the menu
 
-    if choice == "1":
+    clear() #calls the clear screen function
+
+    if choice == "1": # search based off of First name
 
         print("\nYou've selected search FIRST NAME")
         
-        sort = bubble()
-
+        sort = bubble() #calls the bubble sort function
+ 
         search = input("Please enter the FIRST NAME of the person you are looking for: ").lower()
 
         min = 0 #this is the lowest starting index
@@ -174,11 +221,11 @@ while answer == "y":
 
             print("Please check your spelling")
 
-    if choice == "2":
+    if choice == "2": #search based on ID CODE
 
         print("\nYou are now searching based on ID Code")
 
-        sort = idbubble()
+        sort = idbubble() #calls the id specific bubble sort function
 
         search = input("\nPlease Enter the ID CODE of the person/people you searhing for: ")
 
@@ -209,7 +256,7 @@ while answer == "y":
             print("\n\t\tYour search for", search," could NOT be found")
             print("\tPlease check for spelling errors")
 
-    if choice == "3":
+    if choice == "3": #search based of last name
 
         print("Search based off of LAST NAME")
 
@@ -237,17 +284,51 @@ while answer == "y":
 
             print("Your search for", search, "could NOT be found")
             print("Please make sure your spelling is correct")
+            
+    if choice == "4": #search based off of allegiance
 
+        print("Search based off of ALLEGIANCE")
 
+        search = input("Please enter the ALLEGIANCE of the person/people you are searching for: ")
+
+        found = []
+        f = - 1
+
+        for i in range(0 , records):
+
+            if search == allegiance[i]:
+
+                found.append(i) #this stores index of found last names to the list
+
+                f = i
+            
+        if f >= 0:
+
+            print("Your search for", search, ": ")
+
+            for i in range(0 , len(found)):
+                print("\t\t\tIndex: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:8}{5:18}".format(found[i],idP[found[i]].title(),lname[found[i]].title(),fname[found[i]].title(),age[found[i]],allegiance[found[i]].title())) 
+
+        else:
+
+            print("Your search for", search, "could NOT be found")
+            print("Please make sure your spelling is correct")
+
+    if choice == "5": #exit
+
+        print("You have choosen to exit")
+
+    ## answer = input("Would you like to add another search? [y/n]: ").lower()
 
 
 
 
     
 
-    answer = again()
+    answer = again() #ask if you would like another search
+    clear() # clears the screen after every repeat search question
 
-done = goodbye()
+done = goodbye() #closing / goodbye message
 
 
 
