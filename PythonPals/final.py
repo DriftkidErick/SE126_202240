@@ -191,7 +191,7 @@ while answer == "y":
 
             print("\nHey this is all the info we have for", search,": \n")
             for i in range(0, len(found)):
-                print("Index: {0}\t{1:35}\t{2:15}\t{3:15}\t{4:10}".format(found[i], album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
+                print("Index: {0}\t{1:35}\t{2:27}\t{3:15}\t{4:10}".format(found[i], album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
 
         else:
             print("Sorry your search for", search, "could NOT be found")
@@ -220,16 +220,16 @@ while answer == "y":
             print("Your search for",search,": ")
             
             for i in range(0, len(found)):
-                print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}".format(found, album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
+                print("Index: {0}\t{1:35}\t{2:27}\t{3:15}\t{4:10}".format(found[i], album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
 
 
         else:
             print("Sorry your search for", search, "could NOT be found")
 
-    if choice == "4": #pick a random album
-        bum = random.choices(album[i])
-
-        print(bum)
+    if choice == "4": #pick a random album # hey fix this 
+        with open ("C:/Users/008004507/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
+            file = csv.reader(csvfile)
+            print(random.choice([line[0] for line in file]))
 
     if choice == "5":
 
