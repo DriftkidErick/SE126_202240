@@ -43,7 +43,25 @@ def bubble():#make sure to edit this and add the varriables
     for i in range(0, records - 1):#this is the outter loop
 
         for index in range(0, records - 1): #inner loop
-            print()
+            
+            if(album[index] > album[index + 1]):
+
+                temp = album[index]
+                album[index] = album[index +1]
+                album[index + 1] = temp
+
+                temp = artist[index]
+                artist[index] = artist[index + 1]
+                artist[index + 1] = temp
+
+                temp = year[index]
+                year[index] = year[index + 1]
+                year[index + 1] = temp
+
+                temp = explicit[index]
+                explicit[index] = explicit[index + 1]
+                explicit[index + 1] = temp
+
 
 def again():
 
@@ -64,7 +82,8 @@ def goodbye():
 #artist = []
 #year = []
 #explicit = []
-#records = []
+
+#records = 0
 
 #Main Code Below:
 
@@ -75,7 +94,7 @@ explicit = []
 
 records = 0
 
-with open () as csvfile:
+with open ("C:/Users/008004507/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -84,6 +103,11 @@ with open () as csvfile:
         records += 1
 
         #add appends here
+        album.append(rec[0])
+        artist.append(rec[1])
+        year.append(rec[2])
+        explicit.append(rec[3])
+
 
 print("------------------------------------------------------------------------------------------------------------------")
 
@@ -111,7 +135,7 @@ while answer == "y":
 
         sort = bubble() #calls the bubble sort function
 
-        search = input("Please enter the FIST NAME of the peroson you are looking for: ").lower()
+        search = input("Please enter the Album you are looking for: ").lower()
 
         #binary search algorithim:
         min = 0 # this is the lowest starting index
@@ -165,15 +189,56 @@ while answer == "y":
 
         if f >= 0:
 
-            print("Hey this is all the info we have for", search,": ")
+            print("\nHey this is all the info we have for", search,": \n")
             for i in range(0, len(found)):
-                print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}".format(found, album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
+                print("Index: {0}\t{1:35}\t{2:15}\t{3:15}\t{4:10}".format(found[i], album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
 
         else:
             print("Sorry your search for", search, "could NOT be found")
 
+    if choice == "3": #search by year
+
+        print("\nNow searching by Year")
+
+        search = input("Please enter the Year you are searching for: ")
+
+        found = []
+        f = - 1
+
+        search_count = 0
+
+        for i in range(0, records):
+
+            if search == year[i]:
+
+                found.append(i)
+
+                f = i 
+
+        if f >= 0:
+
+            print("Your search for",search,": ")
+            
+            for i in range(0, len(found)):
+                print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}".format(found, album[found[i]], artist[found[i]],year[found[i]],explicit[found[i]]))
 
 
+        else:
+            print("Sorry your search for", search, "could NOT be found")
+
+    if choice == "4": #pick a random album
+        bum = random.choices(album[i])
+
+        print(bum)
+
+    if choice == "5":
+
+        print("You have choosen to exit")
+
+    answer = again()
+    clear()
+
+done = goodbye()
 
 
 
