@@ -230,7 +230,7 @@ while answer == "y":
     if choice == "4": #pick a random album # hey fix this 
         with open ("C:/Users/Erick/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
             file = csv.reader(csvfile)
-            print(random.choice([line[0] for line in file]))
+            print("Hey, we recomend you listen to",random.choice([line[0] for line in file]))
 
     if choice == "5":
 
