@@ -94,7 +94,7 @@ explicit = []
 
 records = 0
 
-with open ("C:/Users/008004507/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
+with open ("C:/Users/Erick/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -135,7 +135,7 @@ while answer == "y":
 
         sort = bubble() #calls the bubble sort function
 
-        search = input("Please enter the Album you are looking for: ").lower()
+        search = input("\nPlease enter the Album you are looking for: ")
 
         #binary search algorithim:
         min = 0 # this is the lowest starting index
@@ -153,20 +153,21 @@ while answer == "y":
                 max = guess - 1
             
             else:  
+
                 min = guess + 1
             
             guess = int((min + max) / 2)
         
         if search == album[guess]:
 
-            print("Your search results for", search,":")
+            print("\nYour search results for", search,":")
 
-            print("Index: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}".format(guess, album[guess], artist[guess],year[guess],explicit[guess]))
+            print("\nIndex: {0}\t{1:15}\t{2:15}\t{3:15}\t{4:10}".format(guess, album[guess], artist[guess],year[guess],explicit[guess]))
 
         else:
             print("\n\tHey sorry...It looks like we dont carry",search,"Check for spelling errors just incase")
 
-        print("BINARY SEARCH LOOPS: {}".format(search_count))
+        print("\nBINARY SEARCH LOOPS: {}".format(search_count))
 
     if choice == "2":#search by artist
 
@@ -227,7 +228,7 @@ while answer == "y":
             print("Sorry your search for", search, "could NOT be found")
 
     if choice == "4": #pick a random album # hey fix this 
-        with open ("C:/Users/008004507/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
+        with open ("C:/Users/Erick/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
             file = csv.reader(csvfile)
             print(random.choice([line[0] for line in file]))
 
