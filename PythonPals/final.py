@@ -94,7 +94,7 @@ explicit = []
 
 records = 0
 
-with open ("C:/Users/Erick/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
+with open ("C:/Users/008004507/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
 
     file = csv.reader(csvfile)
 
@@ -228,9 +228,9 @@ while answer == "y":
             print("Sorry your search for", search, "could NOT be found")
 
     if choice == "4": #pick a random album # hey fix this 
-        with open ("C:/Users/Erick/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
+        with open ("C:/Users/008004507/Desktop/SE126_202240/PythonPals/Final_Project_Data.txt") as csvfile:
             file = csv.reader(csvfile)
-            print("Hey, we recomend you listen to",random.choice([line[0] for line in file]))
+            print("Hey, we recomend you listen to:",random.choice([line[0] for line in file]))
 
     if choice == "5":
 
